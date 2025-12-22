@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shashwat</title>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="/vite.svg">
+  <link rel="stylesheet" href="beta.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="loaded">
+    <div id="tsparticles"></div>
+
+    <canvas id="trail-canvas"></canvas>
+
+    
+    
+
+    
+  
+  
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="code-bracket">***</span>
+                <span class="logo-text">Spikes and Curves</span>
+                <span class="code-bracket">***</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">Stocks</a>
+                
+  
+  
+                <a href="#skills" class="nav-link" id="cbt">Agent FIN</a>
+                <a href="#projects" class="nav-link">Crypto</a>
+                <a href="#achievements" class="nav-link">Markets</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Hi, <span class="accent-text"></span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        <span class="typed-text"></span>
+                        <span class="cursor">**</span>
+                    </p>
+                    <p class="hero-description">
+                        🔥Spike up your wealth.🔥
+                        <br>
+                        ✨Put down your loan 
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#achievements" class="btn btn-primary">Top Winners</a>
+                        <a href="#projects" class="btn btn-primary">Crypto</a>
+                    </div>
+                </div>
+                <div class="hero-visual" style="transform: translateY(0px);">
+                    <div class="code-window">
+                        <div class="window-header">
+                          <span class="window-title">NSE/BSE</span>
+                            <div class="window-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            
+                        </div>
+                        <div class="code-content">
+  <input type="text" id="stockInput" placeholder="Enter Indian stock symbol (e.g., TCS.NS)">
+  <button onclick="loadStock()">Load Stock</button>
+<p id="status" style="color: rgb(236, 167, 20); font-weight: bold;"></p>
+  <canvas id="stockChart" width="700" height="600"></canvas>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-regular fa-address-card"></i> About Market</h2>
+            <div class="projects-grid">
+                <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/dashboard" class="project-link"><i class="fab fa-github"></i></a>
+                            <a href="https://www.nseindia.com/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    
+                    <h3 class="project-title">NSE/BSE</h3>
+                    <p class="project-description">
+                        <b>NSE:</b>: The National Stock Exchange of India Limited (NSE), headquartered in Mumbai, is the country's premier financial marketplace. Established in 1992, it has grown into a highly sophisticated, fully automated electronic trading platform, providing seamless access to investors nationwide.<br>
+                        <b>BSE:</b> BSE Limited, also known as the Bombay Stock Exchange (BSE), is an Indian stock exchange based in Mumbai. Established in 1875, it is the oldest stock exchange in Asia, and also the tenth oldest in the world. It is the 6th largest stock exchange in the world by total market capitalization, exceeding $5 trillion in May 2024.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag"><a href="https://www.bseindia.com/markets.html">About</a></span>
+                        <span class="tech-tag"><a href="https://www.nseindia.com/">Stock</a></span>
+                        <span class="tech-tag"><a href="https://www.nseindia.com/products-services/mf-about-mfss">Mutual funds</a></span>
+                        
+                        <span class="tech-tag"><a href="https://www.nseindia.com/market-data/all-upcoming-issues-ipo">IPO</a></span>
+
+                    </div>
+<div class="mar">
+  <div class="news-box">
+    <div id="newsTicker" class="news-item"></div>
+  </div>
+</div>
+
+
+
+
+                    
+                </div>
+            <div class="about-content">
+                <div class="about-text" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    
+                    <p id="market">
+                       Indian markets at
+your fingertips.
+                    </p>
+                    <p>
+                        Long-term or Short-term,high risk or low risk.Be the kind of investor you want to be.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span id="stat-number1"></span>
+                            <span class="stat-label">Stocks Advancing</span>
+                        </div>
+                        <div class="stat-item">
+                            <span id="stat-number2"></span>
+                            <span class="stat-label">Unchanged</span>
+                        </div>
+                        <div class="stat-item">
+                            <span id="stat-number3"></span>
+                            <span class="stat-label">Stocks Declining</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <div class="profile-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+    <img class="abc" src="kang.png"alt="Profile Image">
+</div>
+                            <div class="info-item">
+                                
+                                <h3>Finance Simplified</h3>
+                                <p>Welcome to the world of Rupee and Dollar</p>
+                                <i class="fa-solid fa-user-secret"></i>
+                            </div>
+                            
+                        </div>
+                        <div class="profile-info">
+                            <div class="info-item">
+                                <i class="fa-solid fa-street-view"></i>
+                                <span>Hindi</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fa-brands fa-slack"></i>
+                                <span>English</span>
+                            </div>
+                            <div class="info-item">
+                                <!-- <i class="fas fa-trophy"></i>
+                                <span>Codeforces Expert</span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="ai-chat-btn">
+        <img src="cbt.png" alt="Chatbot" width="40" height="38">
+    </div>
+
+<div id="ai-chatbox">
+  <div id="ai-header">Finance AI Assistant</div>
+  <div id="ai-messages"></div>
+  <div id="ai-input-area">
+    <input id="ai-input" placeholder="Ask anything about finance..." />
+    <button onclick="sendAI()">➤</button>
+  </div>
+</div>
+
+
+    <!-- Skills Section 
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-computer"></i> Technical Skills</h2>
+            
+                
+                <div class="skill-category" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <h3 class="category-title">
+                        <i class="fas fa-project-diagram"></i>
+                        Algorithms &amp; DS
+                    </h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">Binary Search</span>
+                        
+                        <span class="skill-tag">Graph Algorithms</span>
+                        <span class="skill-tag">Tree Structures</span>
+                        <span class="skill-tag">Greedy Algorithms</span>
+                        <span class="skill-tag">Number Theory</span>
+                        <span class="skill-tag">String Algorithms</span>
+                        <span class="skill-tag">Geometry</span>
+                        <span class="skill-tag">Dynamic Programming</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <h3 class="category-title">
+                        <i class="fa-solid fa-microchip"></i>
+                        Technologies &amp; Tools
+                    </h3>
+                    <div class="skills-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag"> pandas</span>
+                        <span class="skill-tag">ExpressJS</span>
+                        <span class="skill-tag">NumPy</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Projects Section -->
+     
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-house-laptop"></i>CRYPTO</h2>
+
+                <div class="projects-grid">
+                    
+                <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fa-brands fa-bitcoin"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/dashboard" class="project-link"><i class="fab fa-github"></i></a>
+                            
+                        </div>
+                    </div>
+                    
+                    <h3 class="project-title">BITCOIN (₿)</h3>
+                    <p class="project-description">
+                        Bitcoin is the first decentralized cryptocurrency. Based on a free-market ideology, bitcoin was invented in 2008 when an unknown entity published a white paper under the pseudonym of Satoshi Nakamoto. Use of bitcoin as a currency began in 2009, with the release of its open-source implementation.
+                    </p>
+                    
+
+                    <div class="project-tech">
+                        <span class="tech-tag"><a href="https://en.wikipedia.org/wiki/Bitcoin">About</a></span>
+                        <span class="tech-tag"><a href="https://www.nasdaq.com/market-activity/cryptocurrency/btc">Stocks</a></span>
+                        <span class="tech-tag"><a href="https://river.com/learn/who-owns-the-most-bitcoin/">Leaders</a></span>
+                
+
+                    </div>
+                </div>
+
+                <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fa-solid fa-litecoin-sign"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/dashboard" class="project-link"><i class="fab fa-github"></i></a>
+                            
+                        </div>
+                    </div>
+                    <h3 class="project-title">DOGECOIN (Ð)</h3>
+                    <p class="project-description">
+                        Dogecoin  is a cryptocurrency created by software engineers Billy Markus and Jackson Palmer, who decided to create a payment system as a joke, making fun of the wild speculation in cryptocurrencies at the time. It is considered both the first "meme coin", and more specifically the first "dog coin".
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag"><a href="https://en.wikipedia.org/wiki/Dogecoin">About</a></span>
+                        <span class="tech-tag"><a href="https://coinmarketcap.com/currencies/dogecoin/">Stocks</a></span>
+                        <span class="tech-tag"><a href="https://exolix.com/blog/who-owns-the-most-dogecoin">Leaders</a></span>
+                    </div>
+                </div>
+                
+
+                <div class="project-card" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fa-solid fa-dragon"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/dashboard" class="project-link"><i class="fab fa-github"></i></a>
+                            
+                        </div>
+                    </div>
+                    <h3 class="project-title">DRAGO</h3>
+                    <p class="project-description">
+                       Dragon is inspired by a legendary creature with a strong aura, representing power and domination. Enter the captivating world of Dragon, a cryptocurrency inspired by the legendary Dragon character. Join our vibrant community as we combine the excitement of dragons with the possibilities of digital currency.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag"><a href="https://en.wikipedia.org/wiki/Litecoin">About</a></span>
+                        <span class="tech-tag"><a href="https://coinmarketcap.com/currencies/litecoin/">Stocks</a></span>
+                        <span class="tech-tag"><a href="https://www.triple-a.io/cryptocurrency-ownership-data">Leaders</a></span>
+                    </div>
+                    
+                </div>
+
+                <div class="skills-grid">
+                    <div class="crypto-wrapper">
+                <div class="crypto-card">
+                <div class="skill-category" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <h3 class="category-title">
+                        <i class="fa-solid fa-bug"></i>
+                        CRYPTO
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <span class="skill-name"><div id="dg-price">Loading Drago price...</div></span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="95%" style="width: 15%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name"><div id="btc-price">Loading Bitcoin price...</div></span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%" style="width: 78.7%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name"><div id="dtc-price">Loading Dogecoin price...</div></span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%" style="width: 25%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name"><div id="ltc-price">litecoin</div></span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="88%" style="width: 45%;"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            </div>
+                </div>
+        </div>
+    </section>
+    
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+  <div class="container">
+
+    <h2 class="section-title">
+      <i class="fa-solid fa-user-secret"></i> MARKETS
+      <i class="fa-solid fa-user-secret"></i>
+    </h2>
+
+    <!-- GRID -->
+    <div class="markets-grid">
+
+      <!-- MARKETS -->
+      <div class="skill-category">
+        <h3 class="category-title">
+          <i class="fas fa-trophy"></i> MARKETS
+        </h3>
+        <div class="platform-stats" >
+          <div class="platform-item" onclick="window.location.href='https://www.nseindia.com/';" style="cursor: pointer;">
+            <div class="platform-icon">NM</div>
+            <div class="platform-info">
+              <span class="platform-name">National Market</span>
+            </div>
+          </div>
+          <div class="platform-item"  style="cursor: pointer;" onclick="window.location.href='https://www.cnbc.com/us-markets/';">
+            <div class="platform-icon">UM</div>
+            <div class="platform-info">
+              <div class="platform-name">US Market</div>
+            </div>
+          </div>
+          <div class="platform-item" onclick="window.location.href='https://www.moneycontrol.com/markets/global-indices/';" style="cursor: pointer;">
+            <div class="platform-icon">WM</div>
+            <div class="platform-info">
+              <span class="platform-name" >World Market</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WINNERS -->
+      <div class="skill-category">
+        <h3 class="category-title">
+          <i class="fas fa-trophy"></i> WINNERS
+        </h3>
+        <div class="market-list" id="winners-list">
+          <!-- JS injects here -->
+        </div>
+      </div>
+
+      <!-- LOSERS -->
+      <div class="skill-category">
+        <h3 class="category-title">
+          <i class="fas fa-trophy"></i> LOSERS
+        </h3>
+        <div class="market-list" id="losers-list">
+          <!-- JS injects here -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+                <br>
+           
+            <div class="achievements-grid">
+            
+                <!-- Achievement Cards -->
+  <div class="fcontainer">
+    <div class="flip-box">
+      <div class="flip-box-inner">
+        
+        <div class="flip-box-front">
+            <div class="achievement-icon">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            </div>  
+          <h2>National Market</h2>
+        </div>
+        <div class="flip-box-back">
+          <h4><p id="exchange-rate">Loading...</p>
+</h4>
+        </div>
+      </div>
+    </div>
+
+    
+
+    
+    
+   
+                
+                <div class="flip-box">
+      <div class="flip-box-inner">
+        
+        <div class="flip-box-front">
+            <div class="achievement-icon">
+                <i class="fa-solid fa-dollar-sign"></i>
+            </div>
+           
+          <h2>US Market</h2>
+        </div>
+        <div class="flip-box-back">
+          <h2><div id="crypto-price">Loading price...</div></h2>
+        </div>
+      </div>
+    </div>
+                
+                
+                <div class="flip-box">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+            <div class="achievement-icon">
+                <i class="fa-solid fa-globe"></i>
+            </div>
+            
+          <h2>World Market</h2>
+        </div>
+        <div class="flip-box-back">
+          <h2><p id="eur-to-usd-rate">Loading...</p></h2>
+        </div>
+        </div>
+        </div>
+</div>                
+                <!-- <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>CodeChef Weekly Contest</h3>
+                    <p>Top 1% in 5+ contests</p>
+                    <span class="achievement-date">2023</span>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+   <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch <i class="fa-regular fa-message"></i></h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 id="beta">Let's Connect!</h3>
+                    <p id="alpha">
+                        I'm always excited to discuss new opportunities, collaborate on interesting projects, 
+                        or just chat about algorithms and competitive programming.
+                    </p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>shashwat@gmail.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-linkedin"></i>
+                            <span>www.linkedin.com/in/shashwat</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-github"></i>
+                            <span>https://github.com/shashwat</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-code"></i>
+                            <span>https://codeforces.com/profile/shashwat</span>
+                        </div>
+                    </div>
+                </div>
+                <button type="" class="btn btn-primary">
+                            <span onclick="window.location.href='https://mail.google.com/mail/u/1/#inbox?compose=DmwnWrRmTwnQwPCrzNFzzzqJpMqFcdMXvBDPxBXJPwTWJhRDhjRXXGNcqMjNSbFFsxMFfrWBDSLg'">Send Message</span>
+                            <!-- <a href="https://mail.google.com/mail/u/1/#inbox?compose=DmwnWrRmTwnQwPCrzNFzzzqJpMqFcdMXvBDPxBXJPwTWJhRDhjRXXGNcqMjNSbFFsxMFfrWBDSLg"></a> -->
+                            <i class="fas fa-paper-plane"></i>
+                </button>
+                <!-- <div class="contact-form-container">
+                    <form class="" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                        
+
+                    </form>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>© Thanks for reading till the end,</i><br># shashwat signing-off</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/dashboard" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/shashwat-trivedi-4a11a2290/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <!-- <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> -->
+                    <!-- <a href="#" class="social-link"><i class="fas fa-code"></i></a> -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="./gamma.js"></script>
+
+</body>
+
+</html>
